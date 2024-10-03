@@ -6,3 +6,5 @@ tsconfig.json
 tsconfig.json
 *.config.js
 *.config.cjs
+coverage/
+tsup.config.ts
