@@ -3,7 +3,7 @@
 MapTransform with CJS support
 
 [![npm Version](https://img.shields.io/npm/v/map-transform-cjs.svg)](https://www.npmjs.com/package/map-transform-cjs)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fe35a58dd457837b457c/maintainability)](https://codeclimate.com/github/integreat-io/map-transform-cjs/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fe35a58dd457837b457c/maintainability)](https://codeclimate.com/github/oderayi/map-transform-cjs/maintainability)
 
 Behind this rather boring name hides a powerful JavaScript object transformer.
 
@@ -2243,7 +2243,7 @@ Most of the operations has operation object equivalents, allowing the operations
 to be expressed as JSON-friendly objects. With a set of commonly shared
 transformers passed to `mapTransform()` on the `options` object, storing and
 sharing definitions over JSON is quite trivial. This is how we use MapTransform
-in [Integreat](https://github.com/integreat-io/integreat#readme), which it was
+in [Integreat](https://github.com/oderayi/integreat#readme), which it was
 initially written for.
 
 There's probably only one real challenge in turning a transformation defition
@@ -2291,12 +2291,12 @@ The tests can be run with `npm test`.
 ## Contributing
 
 Please read
-[CONTRIBUTING](https://github.com/integreat-io/map-transform-cjs/blob/master/CONTRIBUTING.md)
+[CONTRIBUTING](https://github.com/oderayi/map-transform-cjs/blob/master/CONTRIBUTING.md)
 for details on our code of conduct, and the process for submitting pull
 requests.
 
 ## License
 
 This project is licensed under the ISC License - see the
-[LICENSE](https://github.com/integreat-io/map-transform-cjs/blob/master/LICENSE)
+[LICENSE](https://github.com/oderayi/map-transform-cjs/blob/master/LICENSE)
 file for details.

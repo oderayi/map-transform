@@ -10,5 +10,5 @@
 ## Reporting a Vulnerability
 
 We welcome vulnerabilty reports. Please
-[open an issue](https://github.com/integreat-io/map-transform/issues/new) and
+[open an issue](https://github.com/oderayi/map-transform-cjs/issues/new) and
 describe what you've find.

@@ -1,15 +1,17 @@
 {
-  "name": "map-transform",
-  "version": "1.5.3",
-  "description": "Map and transform objects with mapping definitions",
-  "author": "Kjell-Morten Bratsberg Thorsen <kjellmorten@integreat.io>",
+  "name": "map-transform-cjs",
+  "version": "0.1.0",
+  "description": "MapTransform with CJS support",
+  "author": "Steven Oderayi <oderayi@gmail.com>",
   "license": "ISC",
   "keywords": [
     "map",
     "transform",
     "javascript",
     "object",
-    "path"
+    "path",
+    "cjs",
+    "esm"
   ],
   "type": "module",
   "exports": {
@@ -38,15 +40,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/integreat-io/map-transform.git"
+    "url": "git+https://github.com/oderayi/map-transform-cjs.git"
   },
   "engines": {
     "node": ">= 14"
   },
   "bugs": {
-    "url": "https://github.com/integreat-io/map-transform/issues"
+    "url": "https://github.com/oderayi/map-transform-cjs/issues"
   },
-  "homepage": "https://github.com/integreat-io/map-transform#readme",
+  "homepage": "https://github.com/oderayi/map-transform-cjs#readme",
   "dependencies": {
     "deepmerge": "^4.3.1",
     "map-any": "^1.0.0"
