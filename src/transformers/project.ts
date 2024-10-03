@@ -1,4 +1,4 @@
-import mapAny from 'map-any'
+import mapAny from 'map-any-cjs'
 import { pathGetter } from '../operations/getSet.js'
 import { isObject, isString, isNonEmptyArray } from '../utils/is.js'
 import { ensureArray } from '../utils/array.js'

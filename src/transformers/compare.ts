@@ -1,4 +1,4 @@
-import mapAny from 'map-any'
+import mapAny from 'map-any-cjs'
 import { pathGetter } from '../operations/getSet.js'
 import { defToDataMapper } from '../utils/definitionHelpers.js'
 import { goForward } from '../utils/stateHelpers.js'

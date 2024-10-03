@@ -2,7 +2,10 @@
   "name": "map-transform-cjs",
   "version": "0.1.1",
   "description": "MapTransform with CJS support",
-  "author": "Steven Oderayi <oderayi@gmail.com>",
+  "author": "Kjell-Morten Bratsberg Thorsen <kjellmorten@integreat.io>",
+  "contributors": [
+    "Steven Oderayi <oderayi@gmail.com>"
+  ],
   "license": "ISC",
   "keywords": [
     "map",
@@ -17,14 +20,17 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
     },
     "./definitionHelpers.js": {
       "import": "./dist/utils/definitionHelpers.js",
-      "types": "./dist/utils/definitionHelpers.d.ts"
+      "types": "./dist/utils/definitionHelpers.d.ts",
+      "default": "./dist/utils/definitionHelpers.cjs"
     },
     "./types.js": {
-      "types": "./dist/types.d.ts"
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.d.cjs"
     }
   },
   "scripts": {
@@ -51,7 +57,7 @@
   "homepage": "https://github.com/oderayi/map-transform-cjs#readme",
   "dependencies": {
     "deepmerge": "^4.3.1",
-    "map-any": "^1.0.0"
+    "map-any-cjs": "^1.0.1"
   },
   "devDependencies": {
     "@integreat/ts-dev-setup": "^6.0.4",

@@ -1,4 +1,4 @@
-import mapAny from 'map-any'
+import mapAny from 'map-any-cjs'
 import { escapeValue, unescapeValue } from '../utils/escape.js'
 import type {
   Dictionary,

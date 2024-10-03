@@ -1,4 +1,4 @@
-import mapAny from 'map-any/async.js'
+import mapAny from 'map-any-cjs/async.js'
 import { pathGetter } from '../operations/getSet.js'
 import type { Operation, State, Path, TransformerProps } from '../types.js'
 import {

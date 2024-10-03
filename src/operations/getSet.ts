@@ -1,5 +1,5 @@
 /* eslint-disable security/detect-object-injection */
-import mapAny from 'map-any'
+import mapAny from 'map-any-cjs'
 import modify from './modify.js'
 import {
   getStateValue,
