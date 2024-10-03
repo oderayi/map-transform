@@ -1,9 +1,9 @@
-# MapTransform
+# MapTransformCJS
 
-Map and transform objects with mapping definitions.
+MapTransform with CJS support
 
-[![npm Version](https://img.shields.io/npm/v/map-transform.svg)](https://www.npmjs.com/package/map-transform)
-[![Maintainability](https://api.codeclimate.com/v1/badges/fe35a58dd457837b457c/maintainability)](https://codeclimate.com/github/integreat-io/map-transform/maintainability)
+[![npm Version](https://img.shields.io/npm/v/map-transform-cjs.svg)](https://www.npmjs.com/package/map-transform-cjs)
+[![Maintainability](https://api.codeclimate.com/v1/badges/fe35a58dd457837b457c/maintainability)](https://codeclimate.com/github/integreat-io/map-transform-cjs/maintainability)
 
 Behind this rather boring name hides a powerful JavaScript object transformer.
 
@@ -35,7 +35,7 @@ guide on how to
 Install from npm:
 
 ```
-npm install map-transform
+npm install map-transform-cjs
 ```
 
 ## Breaking changes in v0.5
@@ -62,7 +62,7 @@ npm install map-transform
 Let's look at a simple example:
 
 ```javascript
-import mapTransform from 'map-transform'
+import mapTransform from 'map-transform-cjs'
 
 // You have this object
 const source = {
@@ -140,7 +140,7 @@ mapTransform(def2)(source)
 And if you want the actual date instead of the microseconds since the seventies:
 
 ```javascript
-import mapTransform, { transform } from 'map-transform'
+import mapTransform, { transform } from 'map-transform-cjs'
 
 // ....
 
@@ -408,7 +408,7 @@ of ids pulled from an array of section objects), and finally filter away all
 items with no values in the `sections` prop.
 
 ```javascript
-import { transform, filter } from 'map-transform'
+import { transform, filter } from 'map-transform-cjs'
 
 const def6 = [
   'data.items[]',
@@ -592,7 +592,7 @@ the result you expected, so remember to handle unexpected values in your real
 transformers.
 
 ```javascript
-import mapTransform, { transform } from 'map-transform'
+import mapTransform, { transform } from 'map-transform-cjs'
 
 const ensureInteger = () => (data) => Number.parseInt(data, 10) || 0
 const def7 = {
@@ -680,7 +680,7 @@ the transformer with an id. The transformer themselves should be made available
 on the `options.transformers` object:
 
 ```javascript
-import mapTransform from 'map-transform'
+import mapTransform from 'map-transform-cjs'
 
 // This is our transformer
 const ensureInteger = (props) => () => (data) => Number.parseInt(data, 10) || 0
@@ -768,7 +768,7 @@ the function. See the comment in the transform operation section above.
 Example of a filter, where only data of active members are returned:
 
 ```javascript
-import mapTransform, { filter } from 'map-transform'
+import mapTransform, { filter } from 'map-transform-cjs'
 
 const onlyActives = () => (data) => data.active
 const def9 = [
@@ -784,7 +784,7 @@ const def9 = [
 Defining a filter operation as an operation object:
 
 ```javascript
-import mapTransform from 'map-transform'
+import mapTransform from 'map-transform-cjs'
 
 const onlyActives = (data) => data.active
 const options = { transformers: { onlyActives: () => onlyActives } }
@@ -824,7 +824,7 @@ simply passed on untouched.
 Example:
 
 ```javascript
-import mapTransform, { ifelse } from 'map-transform'
+import mapTransform, { ifelse } from 'map-transform-cjs'
 
 const onlyActives = () => (data) => data.active
 const def31 = [
@@ -840,7 +840,7 @@ const def31 = [
 Defining an if operation as an object:
 
 ```javascript
-import mapTransform from 'map-transform'
+import mapTransform from 'map-transform-cjs'
 
 const def31b = [
   'members'
@@ -874,7 +874,7 @@ be transformed with the `ensureInteger` transformer, even though the transformer
 itself does not support arrays:
 
 ```javascript
-import mapTransform, { iterate } from 'map-transform'
+import mapTransform, { iterate } from 'map-transform-cjs'
 
 const ensureInteger = () => (data) => Number.parseInt(data, 10) || 0
 const def26 = {
@@ -922,7 +922,7 @@ happens in the first function call, i.e. on setup. If you first call
 error right away, you don't have to attempt to map data to discover the error.
 
 ```javascript
-import mapTransform, { apply, transform } from 'map-transform'
+import mapTransform, { apply, transform } from 'map-transform-cjs'
 
 const ensureInteger = () => (data) => Number.parseInt(data, 10) || 0
 const ensureString = () => (data) => String(data)
@@ -989,7 +989,7 @@ not an `undefined` value. To provide the `alt` operation to every item in the
 array, use the `iterate` operation.
 
 ```javascript
-import { alt, transform, transformers } from 'map-transform'
+import { alt, transform, transformers } from 'map-transform-cjs'
 const { value } = transformers
 const currentDate = () => (data) => new Date()
 const formatDate = () => (data) => {
@@ -1071,7 +1071,7 @@ no paths, we can't set any props, so an empty object is the best we can do.
 > be unmerged.
 
 ```javascript
-import { concat } from 'map-transform'
+import { concat } from 'map-transform-cjs'
 
 const def39 = {
   id: 'data.id',
@@ -1117,7 +1117,7 @@ instead of replacing it.
 Example:
 
 ```javascript
-import { modify } from 'map-transform'
+import { modify } from 'map-transform-cjs'
 
 const def34 = modify({
   data: 'data.deeply.placed.items',
@@ -1203,7 +1203,7 @@ The value in the pipeline will be untouched when we are encountering an
 operation that is not intended for the direction we are currently going in.
 
 ```javascript
-import { fwd, rev, transform } from 'map-transform'
+import { fwd, rev, transform } from 'map-transform-cjs'
 const increment = () => (data) => data + 1
 const decrement = () => (data) => data - 1
 
@@ -1248,7 +1248,7 @@ mapping. Their names might make this a bit confusing, but in reverse, the `get`
 operation will set and the `set` operation will get.
 
 ```javascript
-import { get, set } from 'map-transform'
+import { get, set } from 'map-transform-cjs'
 
 const def13 = [get('data.items[].content'), set('content[]')]
 ```
@@ -1301,7 +1301,7 @@ data out of the pipeline.
 Let's look at an example:
 
 ```javascript
-import mapTransform, { root } from 'map-transform'
+import mapTransform, { root } from 'map-transform-cjs'
 
 const def15 = [
   'articles[]',
@@ -1587,7 +1587,7 @@ for consistency with other transformers.
 Here's an example where only data where `role` is set to 'admin' will be kept:
 
 ```javascript
-import { filter, transformers } from 'map-transform'
+import { filter, transformers } from 'map-transform-cjs'
 const { compare } = transformers
 
 const def19 = [
@@ -1632,7 +1632,7 @@ structure will be skipped.
 Example:
 
 ```javascript
-import mapTransform, { transform, transformers } from 'map-transform'
+import mapTransform, { transform, transformers } from 'map-transform-cjs'
 const { explode } = transformers
 
 const data = {
@@ -1747,7 +1747,7 @@ To map to or from `undefined` with a dictionary defined in JSON, use the value
 Example:
 
 ```javascript
-import { transform, transformers } from 'map-transform'
+import { transform, transformers } from 'map-transform-cjs'
 const { map } = transformers
 
 const dictionary = [
@@ -1766,7 +1766,7 @@ or a named dictionary on the `dictionary` property. Here's an example with a
 named dictionary:
 
 ```javascript
-import mapTransform from 'map-transform'
+import mapTransform from 'map-transform-cjs'
 
 const dictionary = [
   [200, 'ok'],
@@ -1800,7 +1800,7 @@ data will be set on the props they were "originally" fetched and merged from.
 > be unmerged.
 
 ```javascript
-import mapTransform, { transform, transformers } from 'map-transform'
+import mapTransform, { transform, transformers } from 'map-transform-cjs'
 const { merge } = transformers
 
 const data = {
@@ -1840,7 +1840,7 @@ opposite of what the filter transformer implies.
 Here we filter _away_ all data where role is set to 'admin':
 
 ```javascript
-import { filter, transformers } from 'map-transform'
+import { filter, transformers } from 'map-transform-cjs'
 const { compare } = transformers
 
 const def21 = [
@@ -1885,7 +1885,7 @@ As we cannot bring back the removed props when mapping in reverse, this
 transformer will pass on the object data as is in reverse.
 
 ```javascript
-import { transform, transformers } from 'map-transform'
+import { transform, transformers } from 'map-transform-cjs'
 const { project } = transformers
 
 const def42 = transform(project({ include: ['id', 'name'] }))
@@ -1923,7 +1923,7 @@ pipeline.
 Example:
 
 ```javascript
-import mapTransform, { transform, transformers } from 'map-transform'
+import mapTransform, { transform, transformers } from 'map-transform-cjs'
 const { sort } = transformers
 
 const data = {
@@ -1964,7 +1964,7 @@ This could be useful for:
 Example of both:
 
 ```javascript
-import { alt, transform, transformers } from 'map-transform'
+import { alt, transform, transformers } from 'map-transform-cjs'
 const { value } = transformers
 
 const def10 = {
@@ -2011,7 +2011,7 @@ mapped to be able to map back to the original data.
 Let's see an example of reverse mapping:
 
 ```javascript
-import mapTransform, { alt, value } from 'map-transform'
+import mapTransform, { alt, value } from 'map-transform-cjs'
 
 const def22 = [
   'data.customers[]',
@@ -2048,7 +2048,7 @@ supported in neighter JavaScript nor JSON.
 For example:
 
 ```javascript
-import mapTransform, { transform } from 'map-transform'
+import mapTransform, { transform } from 'map-transform-cjs'
 
 const username = (name) => name.replace(/\s+/, '.').toLowerCase()
 
@@ -2156,7 +2156,7 @@ mutation, but note that values from the `fixed` transformer will still be
 included. This is by design.
 
 ```javascript
-import mapTransform, { alt, transform, transformers } from 'map-transform'
+import mapTransform, { alt, transform, transformers } from 'map-transform-cjs'
 const { value } = transformers
 
 const def17 = {
@@ -2270,11 +2270,11 @@ a transformer to turn it into an actual Date object.
 MapTransform is written completely in TypeScript, even though all the examples
 in this documentation are in JavaScript for simplicity and readability.
 
-All relevent types are exposed at `map-transform/types`, and may be imported
+All relevent types are exposed at `map-transform-cjs/types`, and may be imported
 into your project like so:
 
 ```javascript
-import type { Transformer } from 'map-transform/types'
+import type { Transformer } from 'map-transform-cjs/types'
 ```
 
 The most usefull types will probably be `Transformer`, that you should use when
@@ -2291,12 +2291,12 @@ The tests can be run with `npm test`.
 ## Contributing
 
 Please read
-[CONTRIBUTING](https://github.com/integreat-io/map-transform/blob/master/CONTRIBUTING.md)
+[CONTRIBUTING](https://github.com/integreat-io/map-transform-cjs/blob/master/CONTRIBUTING.md)
 for details on our code of conduct, and the process for submitting pull
 requests.
 
 ## License
 
 This project is licensed under the ISC License - see the
-[LICENSE](https://github.com/integreat-io/map-transform/blob/master/LICENSE)
+[LICENSE](https://github.com/integreat-io/map-transform-cjs/blob/master/LICENSE)
 file for details.
