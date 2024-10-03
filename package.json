@@ -1,6 +1,6 @@
 {
   "name": "map-transform-cjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MapTransform with CJS support",
   "author": "Steven Oderayi <oderayi@gmail.com>",
   "license": "ISC",
